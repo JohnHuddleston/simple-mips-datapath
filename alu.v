@@ -6,7 +6,7 @@
 //						        			//
 //////////////////////////////////////////////////////////////////////////////////
 
-modue ALU(
+module ALU(
 	input [31:0] a, b,
 	input [3:0] contr,
 	output [31:0] out
@@ -47,3 +47,5 @@ always @ (*) begin
 	end
 
 end
+		
+endmodule
