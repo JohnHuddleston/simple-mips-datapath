@@ -1,9 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-//										//
-// Arithmetic logic unit     							//
-//    Overflow and zero outputs not yet implemented				//
-//						        			//
+//																				//
+// CMPEN 331 Spring 2017														//
+// Code by John Huddleston (Section 2)											//
+// Arithmetic logic unit     													//
+//    Overflow and zero outputs not yet implemented								//
+// 																				//
 //////////////////////////////////////////////////////////////////////////////////
 
 module ALU(
@@ -47,5 +49,5 @@ always @ (*) begin
 	end
 
 end
-		
+
 endmodule

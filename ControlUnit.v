@@ -1,12 +1,16 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-//										//
-// Control unit module								//
-// 										//
+//																				//
+// CMPEN 331 Spring 2017														//
+// Code by John Huddleston (Section 2)											//
+// Control unit module															//
+// 																				//
 //////////////////////////////////////////////////////////////////////////////////
-//										//
-// NOTE: Not all instructions are implemented yet.  				//
-//										//
+//																				//
+// NOTE: Not all instructions are implemented yet.  Lab 4 requires only LW to	//
+//           be defined, but I have defined control outputs for a few other		//
+//           (simple) instructions to be prepared.								//
+//																				//
 //////////////////////////////////////////////////////////////////////////////////
 
 
