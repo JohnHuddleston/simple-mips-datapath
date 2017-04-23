@@ -11,7 +11,7 @@
 module ALU(
 	input [31:0] a, b,
 	input [3:0] contr,
-	output [31:0] out
+	output reg [31:0] out
 	);
 
 always @ (*) begin
@@ -47,6 +47,8 @@ always @ (*) begin
 	4'b1100: begin
 		out = ~(a | b);
 	end
+	
+	endcase
 
 end
 

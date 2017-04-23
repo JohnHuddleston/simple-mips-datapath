@@ -13,21 +13,21 @@ module DataMem(
 	output [31:0] dataOut
 	);
 
-reg [7:0] mem [255:0];
+reg [31:0] mem [255:0];
 
 assign dataOut = mem[readAddr];
 
 initial begin
 	mem[0] = 'hA00000AA;
-	mem[1] = 'h10000011;
-	mem[2] = 'h20000022;
-	mem[3] = 'h30000033;
-	mem[4] = 'h40000044;
-	mem[5] = 'h50000055;
-	mem[6] = 'h60000066;
-	mem[7] = 'h70000077;
-	mem[8] = 'h80000088;
-	mem[9] = 'h90000099;
+	mem[4] = 'h10000011;
+	mem[8] = 'h20000022;
+	mem[12] = 'h30000033;
+	mem[16] = 'h40000044;
+	mem[20] = 'h50000055;
+	mem[24] = 'h60000066;
+	mem[28] = 'h70000077;
+	mem[32] = 'h80000088;
+	mem[36] = 'h90000099;
 end
 
 always @ (*)
@@ -37,3 +37,5 @@ always @ (*)
 			mem[writeAddr] = dataIn;
 			end
 	end
+	
+endmodule

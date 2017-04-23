@@ -16,7 +16,9 @@ module MEMWBRegister(
 always @ (posedge clk) begin
 	wregout = wregin;
 	m2regout = m2regin;
-	RdRtin = RdRtout;
+	RdRtout = RdRtin;
 	aluresultout = aluresultin;
 	memdataout = memdatain;
 end
+
+endmodule

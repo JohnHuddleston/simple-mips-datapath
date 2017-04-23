@@ -3,44 +3,28 @@
 //                                                                              //
 // CMPEN 331 Spring 2017                                                        //
 // Code by John Huddleston (Section 2)                                          //
-// Top level module		                                                        //
+// New CPU top-level module                                                     //
 //                                                                              //
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module cpu(
-    input clk
-    );
+	input clk
+	);
 
-	// Wires for Lab 4 components
-	wire [31:0] instrAddr, newInstrAddr, instr2reg, instr, tempWData, regOutA, regOutB, extended;
-	wire tempWReg, wreg, m2reg, wmem, aluimm;
-	wire[3:0] aluc;
-	wire [4:0] RdRt, tempWAddr;
+wire e0, f0, g0, i0, n0, o0, p0, r0, w0, x0, y0, c1, d1, e1, i1, j1, n1, o1, s1;
+wire [3:0] h0, q0;
+wire [4:0] j0, s0, z0, f1, k1, p1, t1;
+wire [31:0] a0, b0, c0, d0, k0, l0, m0, t0, u0, v0, a1, b1, g1, h1, l1, m1, q1, r1, u1;
 
-	// Wires for EXE and EXE/MEM register components
-	wire wreg2exe, m2reg2exe, wmem2exe, aluimm2exe, wreg2exemem, m2reg2exemem, wmem2exemem;
-	wire [3:0] aluc2exe;
-	wire [4:0] RdRt2exe, RdRt2exemem;
-	wire [31:0] regOutA2exe, regOutB2exe, extended2exe, aluresult2exemem, qb2exemem;
-
-	// Wires for MEM and MEM/WB components
-	wire wreg2mem, m2reg2mem, wmem2mem, wreg2memwb, m2reg2memwb;
-	wire [4:0] RdRt2mem, RdRt2memwb;
-	wire [31:0] aluresult2mem, qb2mem, aluresult2memwb, dataout2memwb;
-
-	PCRegister PCRegister(clk, newInstrAddr, instrAddr);
-	IF IF(instrAddr, newInstrAddr, instr2reg);
-	IFIDRegister IFIDRegister(instr2reg, instr, clk);
-	ID ID(instr, tempWData, clk, tempWReg, tempWAddr, wreg, m2reg, wmem, aluc, aluimm, RdRt, regOutA, regOutB, extended);
-	IDEXERegister IDEXERegister(wreg, m2reg, wmem, aluimm, clk, aluc, RdRt, regOutA, regOutB, extended, wreg2exe, 
-		m2reg2exe, wmem2exe, aluimm2exe, aluc2exe, RdRt2exe, regOutA2exe, regOutB2exe, extended2exe);
-	EXE EXE(wreg2exe, m2reg2exe, wmem2exe, aluimm2exe, aluc2exe, RdRt2exe, regOutA2exe, regOutB2exe, extended2exe, 
-		wreg2exemem, m2reg2exemem, wmem2exemem, RdRt2exemem, qb2exemem, aluresult2exemem);
-	EXEMEMRegister EXEMEMRegister(clk, wreg2exemem, m2reg2exemem, wmem2exemem, RdRt2exemem, aluresult2exemem, qb2exemem,
-		wreg2mem, m2reg2mem, wmem2mem, RdRt2mem, aluresult2mem, dataout2mem);
-	MEM MEM(wreg2mem, m2reg2mem, wmem2mem, RdRt2mem, aluresult2mem, qb2mem, wreg2memwb, m2reg2memwb, RdRt2memwb, 
-		aluresult2memwb, dataout2memwb);
-	MEMWBRegister MEMWBRegister(clk, wreg2memwb, m2reg2memwb, RdRt2memwb, aluresult2memwb, dataout2memwb);
+PCRegister PCRegister(clk, b0, a0);
+IF IF(a0, b0, c0);
+IFIDRegister IFIDRegister(c0, d0, clk);
+ID ID(d0, u1, clk, s1, t1, e0, f0, g0, h0, i0, j0, k0, l0, m0);
+IDEXERegister IDEXERegister(e0, f0, g0, i0, clk, h0, j0, k0, l0, m0, n0, o0, p0, r0, q0, s0, t0, u0, v0);
+EXE EXE(n0, o0, p0, r0, q0, s0, t0, u0, v0, w0, x0, y0, z0, a1, b1);
+EXEMEMRegister EXEMEMRegister(clk, w0, x0, y0, z0, a1, b1, c1, d1, e1, f1, g1, h1);
+MEM MEM(c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1);
+MEMWBRegister MEMWBRegister(clk, i1, j1, k1, l1, m1, n1, o1, p1, q1, r1);
+WB WB(n1, o1, p1, q1, r1, s1, t1, u1);
 
 endmodule

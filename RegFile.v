@@ -11,13 +11,21 @@
 module RegFile(
 	input clk, enableWrite,
     input [4:0] addrA, addrB, writeAddr,
-    input [31:0] writeData, dataOutA, dataOutB
+    input [31:0] writeData, 
+    output [31:0] dataOutA, dataOutB
     );
 
 reg [31:0] regs [31:0];
 
 initial begin
-	regs[1] = 32'b00000000000000000000000000000000;
+	regs[0] = 32'd0;
+	regs[1] = 32'd0;
+	regs[2] = 32'd0;
+	regs[3] = 32'd0;
+	regs[4] = 32'd0;
+	regs[5] = 32'd0;
+	regs[6] = 32'd0;
+	regs[10] = 32'd0;
 end
 
 assign dataOutA = regs[addrA];
