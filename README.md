@@ -11,4 +11,4 @@ This is a simple Verilog implementation of a MIPS processor datapath utilizing a
                             iv.  Memory Access
                             v.   Write-back
                             
-Currently there is one bug in the MEM/WB register, and there is no WB stage.  Everything else is operational.  Branching not implemented, doesn't seem like it will be (for the class, I'll get to it later), and forwarding will most likely be implemented after the WB stage.
+This project currently works in the simulation stage, but logic is dropped upon synthesis.  I suspect that this is due to incorrect initialization or incorrect blocking/non-blocking write usage.  If anyone cares to fix it, be my guest.
